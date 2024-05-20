@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Home Page</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="display-1">Pet</h1>
+    <table class="table table-striped ">
+        <thead class="thead-dark">
+            <th>Name</th>
+            <th>Speices</th>
+            <th>Photo</th>
+            <th>Age</th>
+            <th>Note</th>
+        </thead>
+        <tbody>
+            {%for pet in pets%}
+            <img class="img-thumbnail" src="{{ pet.image_url()}}">
+            <tr>
+                <td>{{pet.name}} <a class="btn btn-sm btn-info" href="/{{pet.id}}">Edit</a></td>
+                <td>{{pet.speices}}</td>
+                <td>{{pet.photo}} <a class="btn btn-sm btn-info" href="/{{pet.id}}">Edit</a></td>
+                <td>{{pet.age}}</td>
+                <td>{{pet.note}}<a class="btn btn-sm btn-info" href="/{{pet.id}}">Edit</a></td>
+                <td>{{pet}}<a class="btn btn-sm btn-info" href="/{{pet.id}}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/add" class="btn btn-success">Add Pet</a>
+</div>  
+</body>
+</html>
