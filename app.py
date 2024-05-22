@@ -89,3 +89,12 @@ def hand_edit_pet():
         flash(f"The things that you can edit are {photo}, {note}, and {available}")
     else:
         return render_template("edit_pet.html")
+
+
+
+#suggestions and improvements
+# Correct @app.rotue to @app.route.
+# Form Instantiation - Add parentheses when creating form instances.
+# Pass Forms to Templates - Ensur forms are passed to render_template.
+# Consolidate Routes - Remove redundant functions and routes.
+# Field Access - Correct form field access and assignment.
